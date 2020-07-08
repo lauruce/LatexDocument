@@ -1,12 +1,15 @@
 % 导言区
-\documentclass[a4paper, 11pt]{article} 
+\documentclass[UTF8,a4paper,12pt]{article} 
 
 % 导入中文宏
 \usepackage{ctex}
+\usepackage{geometry}
+\geometry{a4paper,left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}
 
 \title{\heiti Linux操作指南}
-\author{\kaishu 黄成都}
+\author{\heiti Lauruce}
 \date{\today}
+
 % 正文区
 \begin{document}
     \maketitle
@@ -20,12 +23,9 @@
     \setcounter{page}{1}
     \section{磁盘操作}
     \subsection{分区}
-        一块新的磁盘，加入系统后，使用fdisk -l命令可以查看当前加入的磁盘。fdisk /dev/sda
-        进入磁盘操作命令界面，输入'g'创建一个GPT分区表，然后就可以使用'n'来创建新分区。分区
-        创建好后使用'w'写入并保存。
+        一块新的磁盘，加入系统后，使用fdisk -l命令可以查看当前加入的磁盘。fdisk /dev/sda进入磁盘操作命令界面，输入'g'创建一个GPT分区表，然后就可以使用'n'来创建新分区。分区创建好后使用'w'写入并保存。
 
-        mkfs.ext4 /dev/sda1来格式化sda1分区，并创建ext4文件系统，完成后sda1分区就可以挂载
-        到系统的任何地方了。
+        mkfs.ext4 /dev/sda1来格式化sda1分区，并创建ext4文件系统，完成后sda1分区就可以挂载到系统的任何地方了。
 
         df -h则可以查看当前磁盘的挂载和使用情况。
 
